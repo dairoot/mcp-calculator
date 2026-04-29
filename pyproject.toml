@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xiaozhi-mcp"
+version = "0.2.0"
+description = "Python SDK for piping local MCP stdio servers to Xiaozhi WebSocket endpoints."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "python-dotenv>=1.2.1",
+    "websockets>=15.0.1",
+    "mcp>=1.20.0",
+    "pydantic>=2.12.3",
+    "mcp-proxy>=0.10.0",
+    "fastmcp>=2.13.0.2",
+]
+
+[project.scripts]
+xiaozhi-mcp = "xiaozhi_mcp.pipe:main"
+
+[tool.setuptools]
+packages = ["xiaozhi_mcp"]
